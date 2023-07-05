@@ -1,0 +1,13 @@
+<div class="center">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin()">
+        <div>
+            <label for="login">Login</label>
+            <input type="text" name="login" [(ngModel)]="login" required>
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <button type="submit" >Sign-In</button>
+    </form>
+</div>
