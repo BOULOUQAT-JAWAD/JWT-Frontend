@@ -8,6 +8,7 @@ import { AuthContentComponent } from './auth-content/auth-content.component';
 import { WelcomeContentComponent } from './welcome-content/welcome-content.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ContentComponent } from './content/content.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContentComponent } from './content/content.component';
     AuthContentComponent,
     WelcomeContentComponent,
     LoginFormComponent,
-    ContentComponent
+    ContentComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,

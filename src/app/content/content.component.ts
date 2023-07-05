@@ -13,9 +13,22 @@ export class ContentComponent {
   onLogin(input: any): void{
     this.axiosService.request(
       "POST",
-      "/login",
+      "/api/v1/auth/authenticate",
       {
         login: input.login,
+        password: input.password
+      }
+    )
+  }
+
+  onSignUp(input: any): void{
+    this.axiosService.request(
+      "POST",
+      "/api/v1/auth/register",
+      {
+        firstname: input.firstname,
+        lastname: input.lastname,
+        email: input.email,
         password: input.password
       }
     )
