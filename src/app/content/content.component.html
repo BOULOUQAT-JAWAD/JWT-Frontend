@@ -7,3 +7,6 @@
     <h1>Registration Form</h1>
     <app-signup-form (onSubmitSignUpForm)="onSignUp($event)"/>
 </div>
+
+<h1 *ngIf="componentToShow == 'welcome'"> welcome</h1>
+<h1 *ngIf="componentToShow == 'Logged In'"> You're Logged In</h1>

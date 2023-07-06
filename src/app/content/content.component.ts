@@ -8,6 +8,8 @@ import { AxiosService } from '../axios.service';
 })
 export class ContentComponent {
 
+	componentToShow: string = "welcome";
+
   constructor(private axiosService: AxiosService){}
 
   onLogin(input: any): void{
@@ -15,10 +17,18 @@ export class ContentComponent {
       "POST",
       "/api/v1/auth/authenticate",
       {
-        login: input.login,
+        email: input.email,
         password: input.password
       }
-    )
+    ).then(
+      response => {
+          this.axiosService.setAuthToken(response.data.token);
+          this.componentToShow = "Logged In";
+      }).catch(
+      error => {
+          this.axiosService.setAuthToken(null);
+          this.componentToShow = "welcome";
+      });
   }
 
   onSignUp(input: any): void{
@@ -31,6 +41,14 @@ export class ContentComponent {
         email: input.email,
         password: input.password
       }
-    )
+    ).then(
+      response => {
+          this.axiosService.setAuthToken(response.data.token);
+          this.componentToShow = "Logged In";
+      }).catch(
+      error => {
+          this.axiosService.setAuthToken(null);
+          this.componentToShow = "welcome";
+      });
   }
 }
