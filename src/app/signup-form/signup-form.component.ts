@@ -12,13 +12,15 @@ export class SignupFormComponent {
   lastname: string = "";
   email: string = "";
   password: string = "";
+  role: string = "";
 
   onSubmitSignUp(): void{
     this.onSubmitSignUpForm.emit({
       "firstname":this.firstname,
       "lastname":this.lastname,
       "email":this.email,
-      "password":this.password
+      "password":this.password,
+      "role":this.role
     });
   }
 }

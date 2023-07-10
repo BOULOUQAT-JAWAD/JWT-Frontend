@@ -16,6 +16,14 @@
             <label for="password">password</label>
             <input type="password" name="password" [(ngModel)]="password" required>
         </div>
+        <div>
+            <label for="role">role</label>
+            <select name="role" id="role" [(ngModel)]="role" required>
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="MANAGER">MANAGER</option>
+            </select>
+        </div>
         <button type="submit" >Sign-Up</button>
     </form>
 </div>

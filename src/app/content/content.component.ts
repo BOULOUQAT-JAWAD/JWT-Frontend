@@ -8,9 +8,14 @@ import { AxiosService } from '../axios.service';
 })
 export class ContentComponent {
 
-	componentToShow: string = "welcome";
+	componentToShow: string ;
 
-  constructor(private axiosService: AxiosService){}
+  constructor(private axiosService: AxiosService){
+    if(this.axiosService.getAuthToken() != null)
+      this.componentToShow="Logged In";
+    else
+      this.componentToShow="Welcome";
+  }
 
   onLogin(input: any): void{
     this.axiosService.request(
